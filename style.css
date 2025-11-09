@@ -1,88 +1,176 @@
-/* تنظیمات پایه */
+/* 🖤 تنظیمات پایه */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
-  font-family: "Vazirmatn", sans-serif;
-  line-height: 1.8;
-  background-color: #f8f9fa;
-  color: #333;
+  font-family: "Poppins", "Vazirmatn", sans-serif;
+  line-height: 1.9;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #f2f2f2;
   margin: 0;
   padding: 0;
   direction: rtl;
 }
 
-/* هدر */
+/* 💼 هدر */
 header {
-  background-color: #0d6efd;
-  color: white;
+  background: linear-gradient(90deg, #000000, #1f1f1f);
+  color: #f5c518;
   text-align: center;
-  padding: 2rem 1rem;
-  border-bottom: 4px solid #0b5ed7;
+  padding: 2.5rem 1rem;
+  border-bottom: 3px solid #f5c518;
+  box-shadow: 0 4px 15px rgba(245, 197, 24, 0.2);
 }
 
-header a {
-  color: #fff;
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+header p {
+  margin-top: 8px;
+  font-weight: 300;
+  opacity: 0.9;
+  color: #e0e0e0;
+}
+
+.contact-links {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.contact-links a {
+  color: #f5c518;
   text-decoration: none;
-  margin: 0 5px;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
-header a:hover {
-  text-decoration: underline;
+.contact-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(245, 197, 24, 0.8);
 }
 
-/* بخش‌ها */
-section {
-  max-width: 800px;
+/* 📦 بخش‌ها */
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
   margin: 2rem auto;
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 0 10px;
+  flex-wrap: wrap;
 }
 
-/* تیتر هر بخش */
+section {
+  flex: 1;
+  min-width: 300px;
+  background-color: #1c1c1c;
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1.5px solid rgba(245, 197, 24, 0.5);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(245, 197, 24, 0.3);
+}
+
+/* ✨ عنوان هر بخش */
 h2 {
-  border-right: 5px solid #0d6efd;
-  padding-right: 10px;
-  color: #0d6efd;
+  border-right: 5px solid #f5c518;
+  padding-right: 12px;
+  color: #f5c518;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
-/* لیست‌ها */
+/* 📋 لیست‌ها */
 ul {
-  padding-right: 20px;
+  padding-right: 25px;
+  margin: 0;
 }
 
 li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  position: relative;
+  color: #ddd;
 }
 
-/* لینک‌ها */
+li::before {
+  content: "•";
+  color: #f5c518;
+  font-weight: bold;
+  position: absolute;
+  right: -15px;
+  top: 0;
+}
+
+/* 🎯 مهارت‌ها (Flexbox) */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background-color: rgba(245,197,24,0.1);
+  color: #f5c518;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* 🔗 لینک‌ها */
 a {
-  color: #0d6efd;
+  color: #f5c518;
+  text-decoration: none;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 
 a:hover {
-  color: #0a58ca;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(245, 197, 24, 0.8);
 }
 
-/* فوتر */
+/* 🧩 فوتر */
 footer {
   text-align: center;
-  padding: 1rem;
-  background-color: #e9ecef;
-  color: #555;
+  padding: 1.5rem;
+  background-color: #111;
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(245, 197, 24, 0.4);
 }
 
-/* ریسپانسیو برای موبایل */
+/* 📱 ریسپانسیو */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  section {
+    min-width: auto;
+  }
+}
+
 @media (max-width: 600px) {
   body {
     font-size: 15px;
   }
 
-  section {
-    margin: 1rem;
-    padding: 1rem;
+  header {
+    padding: 1.5rem;
   }
 
-  header {
-    padding: 1rem;
+  h2 {
+    font-size: 1.2rem;
   }
 }
+
