@@ -1,139 +1,131 @@
-/* فونت و تنظیمات پایه */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600&display=swap');
 
 body {
-  font-family: "Poppins", "Vazirmatn", sans-serif;
-  line-height: 1.9;
-  background: linear-gradient(135deg, #0e0e0e, #1a1a1a);
-  color: #f2f2f2;
+  font-family: "Vazirmatn", sans-serif;
+  line-height: 1.8;
+  background-color: #f5f5f5;
+  color: #333;
   margin: 0;
   padding: 0;
   direction: rtl;
 }
 
-/* 🔹 هدر */
+
 header {
-  background: linear-gradient(90deg, #000, #1a1a1a);
-  color: #f5c518;
-  padding: 2.5rem 1rem;
-  border-bottom: 3px solid #f5c518;
-  box-shadow: 0 4px 15px rgba(245, 197, 24, 0.2);
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .profile {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  max-width: 800px;
+  width: 100%;
 }
 
 .profile-pic {
   width: 120px;
   height: 120px;
-  background: #444;
   border-radius: 50%;
-  border: 3px solid #f5c518;
+  background-color: #dcdcdc;
   background-image: url("images/profile.jpg");
   background-size: cover;
   background-position: center;
+  flex-shrink: 0;
 }
 
 .profile-info {
   text-align: right;
-  max-width: 500px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
 }
 
 header p {
-  margin-top: 8px;
-  font-weight: 300;
-  opacity: 0.9;
-  color: #e0e0e0;
+  margin: 8px 0;
+  color: #555;
+  font-weight: 400;
 }
 
 .contact-links {
-  margin-top: 10px;
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
+  gap: 12px;
 }
 
 .contact-links a {
-  color: #f5c518;
+  color: #0077b6;
   text-decoration: none;
-  transition: 0.3s ease;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 .contact-links a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(245, 197, 24, 0.8);
+  color: #023e8a;
 }
 
-/* 🔹 ساختار اصلی با Flexbox */
+
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 2rem auto;
-  padding: 0 10px;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 1rem;
 }
 
-/* 🔹 بخش‌ها */
 section {
-  flex: 1;
-  min-width: 320px;
-  background-color: #1c1c1c;
-  padding: 2rem;
-  border-radius: 14px;
-  border: 1.5px solid rgba(245, 197, 24, 0.4);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e6e6e6;
 }
 
-section:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(245, 197, 24, 0.3);
-}
-
-/* عنوان‌ها */
 h2 {
-  border-right: 5px solid #f5c518;
+  font-size: 1.3rem;
+  border-right: 4px solid #0077b6;
   padding-right: 10px;
-  color: #f5c518;
-  font-size: 1.4rem;
-  font-weight: 600;
   margin-bottom: 1rem;
+  color: #023e8a;
 }
 
-/* لیست‌ها */
+h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+
 ul {
-  padding-right: 25px;
+  padding-right: 20px;
   margin: 0;
 }
 
 li {
-  margin-bottom: 10px;
-  color: #ddd;
+  margin-bottom: 8px;
   position: relative;
+  color: #555;
 }
 
 li::before {
   content: "•";
-  color: #f5c518;
+  color: #0077b6;
   font-weight: bold;
   position: absolute;
   right: -15px;
 }
 
-/* مهارت‌ها */
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -141,31 +133,46 @@ li::before {
 }
 
 .skill {
-  background-color: rgba(245,197,24,0.1);
-  color: #f5c518;
-  padding: 5px 12px;
-  border-radius: 8px;
-  font-weight: 500;
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 6px 14px;
+  border-radius: 20px;
   font-size: 0.9rem;
+  transition: background-color 0.3s ease;
 }
 
-/* فوتر */
+.skill:hover {
+  background-color: #e0e0e0;
+}
+
+
 footer {
   text-align: center;
   padding: 1.5rem;
-  background-color: #111;
-  color: #aaa;
+  background-color: #fafafa;
+  color: #777;
   font-size: 0.9rem;
+  border-top: 1px solid #e5e5e5;
   margin-top: 3rem;
-  border-top: 1px solid rgba(245, 197, 24, 0.4);
 }
 
-/* 📱 واکنش‌گرا */
-@media (max-width: 800px) {
-  .container {
-    flex-direction: column;
-  }
+
+@media (max-width: 700px) {
   .profile {
     flex-direction: column;
+    text-align: center;
+  }
+
+  header {
+    padding: 1.5rem;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  h2 {
+    font-size: 1.1rem;
   }
 }
