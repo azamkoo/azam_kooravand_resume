@@ -1,29 +1,52 @@
-/* 🖤 تنظیمات پایه */
+/* فونت و تنظیمات پایه */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
   font-family: "Poppins", "Vazirmatn", sans-serif;
   line-height: 1.9;
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  background: linear-gradient(135deg, #0e0e0e, #1a1a1a);
   color: #f2f2f2;
   margin: 0;
   padding: 0;
   direction: rtl;
 }
 
-/* 💼 هدر */
+/* 🔹 هدر */
 header {
-  background: linear-gradient(90deg, #000000, #1f1f1f);
+  background: linear-gradient(90deg, #000, #1a1a1a);
   color: #f5c518;
-  text-align: center;
   padding: 2.5rem 1rem;
   border-bottom: 3px solid #f5c518;
   box-shadow: 0 4px 15px rgba(245, 197, 24, 0.2);
 }
 
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  background: #444;
+  border-radius: 50%;
+  border: 3px solid #f5c518;
+  background-image: url("images/profile.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-info {
+  text-align: right;
+  max-width: 500px;
+}
+
 header h1 {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -35,16 +58,15 @@ header p {
 }
 
 .contact-links {
-  margin-top: 12px;
+  margin-top: 10px;
   display: flex;
-  justify-content: center;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 .contact-links a {
   color: #f5c518;
   text-decoration: none;
-  font-weight: 500;
   transition: 0.3s ease;
 }
 
@@ -53,23 +75,25 @@ header p {
   text-shadow: 0 0 10px rgba(245, 197, 24, 0.8);
 }
 
-/* 📦 بخش‌ها */
+/* 🔹 ساختار اصلی با Flexbox */
 .container {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   max-width: 1000px;
   margin: 2rem auto;
   padding: 0 10px;
-  flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* 🔹 بخش‌ها */
 section {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
   background-color: #1c1c1c;
   padding: 2rem;
   border-radius: 14px;
-  border: 1.5px solid rgba(245, 197, 24, 0.5);
+  border: 1.5px solid rgba(245, 197, 24, 0.4);
   box-shadow: 0 4px 20px rgba(0,0,0,0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -79,17 +103,17 @@ section:hover {
   box-shadow: 0 8px 25px rgba(245, 197, 24, 0.3);
 }
 
-/* ✨ عنوان هر بخش */
+/* عنوان‌ها */
 h2 {
   border-right: 5px solid #f5c518;
-  padding-right: 12px;
+  padding-right: 10px;
   color: #f5c518;
   font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-/* 📋 لیست‌ها */
+/* لیست‌ها */
 ul {
   padding-right: 25px;
   margin: 0;
@@ -97,8 +121,8 @@ ul {
 
 li {
   margin-bottom: 10px;
-  position: relative;
   color: #ddd;
+  position: relative;
 }
 
 li::before {
@@ -107,10 +131,9 @@ li::before {
   font-weight: bold;
   position: absolute;
   right: -15px;
-  top: 0;
 }
 
-/* 🎯 مهارت‌ها (Flexbox) */
+/* مهارت‌ها */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -126,19 +149,7 @@ li::before {
   font-size: 0.9rem;
 }
 
-/* 🔗 لینک‌ها */
-a {
-  color: #f5c518;
-  text-decoration: none;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-
-a:hover {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(245, 197, 24, 0.8);
-}
-
-/* 🧩 فوتر */
+/* فوتر */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -149,28 +160,12 @@ footer {
   border-top: 1px solid rgba(245, 197, 24, 0.4);
 }
 
-/* 📱 ریسپانسیو */
+/* 📱 واکنش‌گرا */
 @media (max-width: 800px) {
   .container {
     flex-direction: column;
   }
-  
-  section {
-    min-width: auto;
+  .profile {
+    flex-direction: column;
   }
 }
-
-@media (max-width: 600px) {
-  body {
-    font-size: 15px;
-  }
-
-  header {
-    padding: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-}
-
