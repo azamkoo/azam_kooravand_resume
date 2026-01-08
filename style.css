@@ -220,3 +220,11 @@ form button:hover {
   color: #0077b6;
 }
 
+#form-message {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+

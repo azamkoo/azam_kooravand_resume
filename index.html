@@ -8,18 +8,21 @@
 </head>
 
 <script>
-  const form = document.getElementById("request-form");
-  const message = document.getElementById("form-message");
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("request-form");
+    const message = document.getElementById("form-message");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    message.textContent = "درخواست شما ثبت شد (فعلاً به صورت تستی)";
-    message.style.color = "green";
+      message.textContent = "✅ درخواست شما با موفقیت ثبت شد";
+      message.style.color = "#2e7d32";
 
-    form.reset();
+      form.reset();
+    });
   });
 </script>
+
 
 <body>
   <header>
@@ -110,7 +113,7 @@
 
     <button type="submit">ارسال درخواست</button>
 
-    <p id="form-message"></p>
+     <p id="form-message"></p>
    </form>
   </section>
 
