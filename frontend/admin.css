@@ -1,0 +1,96 @@
+/* ===== فونت و تنظیمات پایه ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: "Poppins", "Vazirmatn", sans-serif;
+  background: linear-gradient(135deg, #aa17173e, #c98f8f);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+}
+
+/* ===== جدول ادمین ===== */
+table {
+  width: 90%;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+th {
+  background: linear-gradient(90deg, #80050586, #713232);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+tr:hover {
+  background-color: rgba(255,255,255,0.1);
+  transition: 0.3s;
+}
+
+/* ===== دکمه‌ها ===== */
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* دکمه Delete */
+button:nth-child(2) {
+  background-color: #c62828;
+  color: #fff;
+}
+
+button:nth-child(2):hover {
+  background-color: #b71c1c;
+}
+
+/* دکمه Accept */
+button:nth-child(1) {
+  background-color: #2e7d32;
+  color: #fff;
+}
+
+button:nth-child(1):hover {
+  background-color: #1b5e20;
+}
+
+/* ===== هدر جدول ===== */
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: #f1f1f1;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+/* ===== واکنش‌گرا ===== */
+@media (max-width: 768px) {
+  table, th, td {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+}
+

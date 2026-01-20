@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/static/admin.css">
+</head>
+<body>
+    <h1>Admin Page</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Project Type</th> <!-- نوع پروژه -->
+        <th>Project Description</th> <!-- توضیح پروژه -->
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    {% for r in requests %}
+    <tr id="row-{{ r.id }}">
+        <td>{{ r.id }}</td>
+        <td>{{ r.name }}</td>
+        <td>{{ r.email }}</td>
+        <td>{{ r.project_type }}</td> <!-- نمایش نوع پروژه -->
+        <td>{{ r.project_desc }}</td> <!-- نمایش توضیح پروژه -->
+        <td id="status-{{ r.id }}">{{ r.status if r.status else "pending" }}</td>
+        <td>
+            <button onclick="acceptRequest('{{ r.id }}')">Accept</button>
+            <button onclick="deleteRequest('{{ r.id }}')">Delete</button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+    <script>
+async function acceptRequest(id) {
+    const res = await fetch(`/accept/${id}`, { method: 'POST' });
+    if (res.ok) {
+        document.getElementById(`status-${id}`).textContent = "accepted";
+    } else {
+        alert("خطا در قبول کردن درخواست");
+    }
+}
+
+async function deleteRequest(id) {
+    const res = await fetch(`/delete/${id}`, { method: 'DELETE' });
+    if (res.ok) {
+        location.reload();  // یا فقط حذف ردیف جدول
+    } else {
+        alert("خطا در حذف درخواست");
+    }
+}
+</script>
+</body>
+</html>
