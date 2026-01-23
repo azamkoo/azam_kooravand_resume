@@ -1,4 +1,4 @@
-/* فونت و تنظیمات پایه */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
@@ -11,7 +11,6 @@ body {
   direction: rtl;
 }
 
-/* 🔹 هدر */
 header {
   background: linear-gradient(90deg, #80050586, #713232);
   color: #350b0b;
@@ -75,7 +74,7 @@ header p {
   text-shadow: 0 0 10px rgba(67, 112, 129, 0.8);
 }
 
-/* 🔹 ساختار اصلی با Flexbox */
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -86,7 +85,7 @@ header p {
   justify-content: center;
 }
 
-/* 🔹 بخش‌ها */
+
 section {
   flex: 1;
   min-width: 320px;
@@ -103,7 +102,7 @@ section:hover {
   box-shadow: 0 8px 25px rgba(245, 197, 24, 0.3);
 }
 
-/* عنوان‌ها */
+
 h2 {
   border-right: 5px solid #340244;
   padding-right: 10px;
@@ -113,7 +112,7 @@ h2 {
   margin-bottom: 1rem;
 }
 
-/* لیست‌ها */
+
 ul {
   padding-right: 25px;
   margin: 0;
@@ -133,7 +132,7 @@ li::before {
   right: -15px;
 }
 
-/* مهارت‌ها */
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -149,7 +148,7 @@ li::before {
   font-size: 0.9rem;
 }
 
-/* فوتر */
+
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -160,7 +159,7 @@ footer {
   border-top: 1px solid rgba(245, 197, 24, 0.4);
 }
 
-/* 📱 واکنش‌گرا */
+
 @media (max-width: 800px) {
   .container {
     flex-direction: column;
@@ -170,7 +169,7 @@ footer {
   }
 }
 
-/* 📝 فرم درخواست پروژه */
+
 form {
   display: flex;
   flex-direction: column;

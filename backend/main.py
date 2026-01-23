@@ -8,9 +8,9 @@ from backend import models, database
 from fastapi import FastAPI, Request
 from fastapi.responses import JSONResponse
 
-# ------------------- تنظیمات -------------------
+
 app = FastAPI(title="Resume Project")
- # ---------------- WebSocket کاربران آنلاین ----------------
+
 from fastapi import WebSocket, WebSocketDisconnect
 
 # لیست کاربران آنلاین
@@ -45,17 +45,16 @@ async def websocket_endpoint(ws: WebSocket):
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
-# مسیر frontend
+
 frontend_path = Path(__file__).parent.parent / "frontend"
 
-# StaticFiles روی /static
+
 app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
-# Templates
+
 templates = Jinja2Templates(directory="frontend")
 
 
-# ------------------- دیتابیس -------------------
 models.Base.metadata.create_all(bind=database.engine)
 
 def get_db():
@@ -118,7 +117,7 @@ from fastapi.responses import HTMLResponse
 
 @app.get("/admin", response_class=HTMLResponse)
 def admin_page(request: Request, db: Session = Depends(get_db)):
-    # چک کردن کوکی
+   
     if request.cookies.get("admin") != "true":
         return RedirectResponse(url="/login")
 
@@ -129,7 +128,7 @@ def admin_page(request: Request, db: Session = Depends(get_db)):
 def accept_request(request_id: int, db: Session = Depends(get_db)):
     req = db.query(models.Request).filter(models.Request.id == request_id).first()
     if req:
-        req.status = "accepted"  # توجه: مطمئن شو ستون status تو مدل Request وجود داره
+        req.status = "accepted"  
         db.commit()
         return JSONResponse(content={"message": "Request accepted"})
     return JSONResponse(status_code=404, content={"message": "Request not found"})
